@@ -1,0 +1,1224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+  Нормализация блочной модели
+ */
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+ 
+ 
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+ :where(ul, ol):where([class]) {
+   padding-left: 0;
+ }
+ 
+ 
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+ body,
+ :where(blockquote, figure):where([class]) {
+   margin: 0;
+ }
+ 
+ 
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+ :where(
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   ul,
+   ol,
+   dl
+ ):where([class]) {
+   margin-block: 0;
+ }
+ 
+ :where(dd[class]) {
+   margin-left: 0;
+ }
+ 
+ 
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+ :where(ul[class]) {
+   list-style: none;
+ }
+ 
+ 
+   Упрощаем работу с изображениями
+  */
+ img {
+   display: block;
+   max-width: 100%;
+ }
+ 
+ 
+   Наследуем свойства шрифт для полей ввода
+  */
+ input,
+ textarea,
+ select,
+ button {
+   font: inherit;
+ }
+ 
+
+ body {
+  
+   min-height: 100%;
+
+   line-height: 1.5;
+ }
+
+/* font-family: "PT Sans", sans-serif; */
+/* font-family: "Lato", sans-serif; */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 350px;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 90px;
+ }
+
+.header img {
+    height: 17px;
+    width: 16px;
+}
+
+.header__div {
+  font-family: "PT Sans", sans-serif;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__p  {
+    font-size: 14px;
+}
+.header__h1 {
+    font-size: 22px;
+}
+
+
+
+.section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1170px;
+  height: 561px;
+  margin-bottom: 70px;
+}
+
+.section__div {
+  margin-left: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 столбца одинаковой ширины */
+  grid-template-rows: repeat(2, 265px); /* 2 строки высотой 100px */
+  gap: 30px;
+}
+
+.section__div-head {
+  width: 374px;
+  height: 560px;
+}
+
+.button__a {
+  margin-top: -450px;
+  margin-left: 20px;
+  display: flex;
+  text-decoration: none;
+  transition: transform 0.8s ease;
+}
+.button__a:hover {
+  transform: scale(1.1);
+}
+.button {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  text-align: inherit; /*Наследует выравнивание текста*/
+  cursor: pointer; /*Важно: вернет курсор указателя*/
+  border-radius: 3px;
+  background: rgb(74, 144, 226);
+  width: 68px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+.button__a2 {
+  margin-top: -200px;
+  margin-left: 15px;
+  display: flex;
+  text-decoration: none;
+  transition: transform 0.8s ease;
+}
+
+.button__a2:hover {
+  transform: scale(1.1);
+}
+.button2 {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  text-align: inherit; /*Наследует выравнивание текста*/
+  cursor: pointer; /*Важно: вернет курсор указателя*/
+  border-radius: 3px;
+  background: rgb(74, 144, 226);
+  width: 68px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+.button__a3 {
+  margin-top: -190px;
+  margin-left: 13px;
+  display: flex;
+  text-decoration: none;
+  transition: transform 0.8s ease;
+}
+
+.button__a3:hover {
+  transform: scale(1.1);
+}
+
+.button3 {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  text-align: inherit; /*Наследует выравнивание текста*/
+  cursor: pointer; /*Важно: вернет курсор указателя*/
+  border-radius: 3px;
+  background: rgb(74, 144, 226);
+  width: 68px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+
+
+.section__div1 {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 370px;
+  height: 265px;
+  overflow: hidden;
+}
+
+.section__div1 img {
+  width: 100%; /* Картинка занимает всю ширину контейнера */
+  height: 100%; /* Картинка занимает всю высоту контейнера */
+  object-fit: cover;
+  object-position: 40% 85%;
+}
+
+.section__div2 {
+  width: 370px;
+  height: 265px;
+  overflow: hidden;
+}
+
+.section__div2 img {
+  width: 100%; /* Картинка занимает всю ширину контейнера */
+  height: 100%; /* Картинка занимает всю высоту контейнера */
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+
+.section__div3 {
+  width: 370px;
+  height: 265px;
+  overflow: hidden;
+}
+.section__div3 img {
+  width: 100%; /* Картинка занимает всю ширину контейнера */
+  height: 100%; /* Картинка занимает всю высоту контейнера */
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+
+
+.section__div4 {
+  width: 370px;
+  height: 265px;
+  overflow: hidden;
+  background-size: cover; /* Заполняет контейнер, обрезая изображение */
+  background-position: center;
+}
+
+.section__div4 img {
+  width: 100%; /* Картинка занимает всю ширину контейнера */
+  height: 100%; /* Картинка занимает всю высоту контейнера */
+  object-fit: cover;
+  object-position: 50% 50%;
+  height: auto; /* Сохраняем соотношение сторон */
+  object-fit: cover; /* Заполняем контейнер, обрезая части изображения */
+  display: block; /* Убираем отступы по умолчанию */
+}
+
+
+.section__h1 {
+  width: 363px;
+  height: 72px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 36px;
+  margin-top: -100px;
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение текста */
+  justify-content: center; /* Центрируем текст по вертикали */
+  align-items: center; /* Центрируем текст по горизонтали */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  color: rgb(255, 255, 255);
+  text-align: center; /* Центрирование текста */
+  z-index: 1; /* Текст поверх изображения */
+}
+
+.section__p {
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgb(255, 255, 255);
+  margin-top: -112px;
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение текста */
+  justify-content: center; /* Центрируем текст по вертикали */
+  align-items: start;
+  z-index: 3;
+  margin-left: 27px;
+}
+
+
+.section__h3 {
+  width: 330px;
+  height: 60px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  margin-top: -70px;
+  display: flex;
+  flex-direction: row; /* Вертикальное расположение текста */
+  justify-content: center; /* Центрируем текст по вертикали */
+  align-items: center; /* Центрируем текст по горизонтали */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  color: rgb(255, 255, 255);
+  text-align: center; /* Центрирование текста */
+  z-index: 1; /* Текст поверх изображения */
+  margin-left: 20px;
+}
+
+.section__p2 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgb(255, 255, 255);
+  margin-top: -95px;
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение текста */
+  justify-content: center; /* Центрируем текст по вертикали */
+  align-items: start;
+  z-index: 3;
+  margin-left: 32px;
+}
+
+.section__2 {
+  width: 770px;
+  height: 560px;
+  
+}
+
+.section__2-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.section__2-div img {
+  width: 770px;
+  height: 440px;
+  width: 100%;
+  display: flex;
+  height: auto;
+  display: block;
+}
+
+.section__2-words {
+  margin-top: -120px;
+  width: 730px;
+  height: 240px;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
+ 
+}
+
+.button__a4 {
+  margin-top: -225px;
+  margin-left: 50px;
+  display: flex;
+  text-decoration: none;
+  transition: transform 0.8s ease;
+}
+
+.button__a4:hover {
+  transform: scale(1.084);
+}
+
+.button4 {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  text-align: inherit; /*Наследует выравнивание текста*/
+  cursor: pointer; /*Важно: вернет курсор указателя*/
+  border-radius: 3px;
+  background: rgb(74, 144, 226);
+  width: 68px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+.section__2-words-h2 {
+  margin-left: 30px;
+  margin-top: 52px;
+  width: 594px;
+  height: 28px;
+  font-family: "PT Sans";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.section__2-words-h3 {
+  margin-left: 30px;
+  width: 159px;
+  height: 18px;
+  font-family: "PT Sans";
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgb(102, 102, 102);
+}
+
+.section__2-words-h4 {
+  margin-left: 30px;
+  width: 614px;
+  height: 72px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: "PT Sans";
+  color: rgb(102, 102, 102);
+}
+
+
+.section__3 {
+  margin-top: 50px;
+  width: 770px;
+  height: 560px;
+  
+}
+
+.section__3-div {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.section__3-div img {
+  width: 770px;
+  height: 440px;
+  width: 100%;
+  display: flex;
+  height: auto;
+  display: block;
+}
+
+.section__4 {
+  margin-top: 50px;
+  width: 770px;
+  height: 560px;
+  
+}
+
+.section__4-div {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.section__4-div img {
+  width: 770px;
+  height: 440px;
+  width: 100%;
+  display: flex;
+  height: auto;
+  display: block;
+}
+
+
+.section__5 {
+  margin-top: 50px;
+  width: 770px;
+  height: 560px;
+  
+}
+
+.section__5-div {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.section__5-div img {
+  width: 770px;
+  height: 440px;
+  width: 100%;
+  display: flex;
+  height: auto;
+  display: block;
+}
+
+.section__6 {
+  margin-top: 50px;
+  width: 770px;
+  height: 560px;
+  
+}
+
+.section__6-div {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.section__6-div img {
+  width: 770px;
+  height: 440px;
+  width: 100%;
+  display: flex;
+  height: auto;
+  display: block;
+}
+
+.section__7 {
+  margin-top: 50px;
+  display: flex;
+  justify-self: start;
+  align-items: start;
+  width: 340px;
+  height: 40px;
+  margin-bottom: 100px;
+}
+
+.section__7-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 3px;
+  margin-left: 10px;
+  font-family: "PT Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: black;
+}
+
+.section__8 {
+  display: flex;
+  justify-content: space-between;
+  width: 1170px;
+  height: 364px;
+}
+
+.section__8-h3 {
+  margin-top: 15px;
+  width: 270px;
+  height: 56px;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.section__8-h4 {
+  margin-top: 10px;
+  width: 159px;
+  height: 18px;
+  font-family: "PT Sans";
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+
+.button__a5 {
+  margin-top: -320px;
+  margin-left: 10px;
+  display: flex;
+  text-decoration: none;
+  transition: transform 0.8s ease;
+}
+
+.button__a5:hover {
+  transform: scale(1.07);
+}
+.button5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  text-align: inherit; /*Наследует выравнивание текста*/
+  cursor: pointer; /*Важно: вернет курсор указателя*/
+  border-radius: 3px;
+  background: rgb(74, 144, 226);
+  width: 48px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+}
+
+.sidebar {
+  width: 270px;
+  height: 2761px;
+  order: 1;
+}
+
+.sidebar img {
+  width: 270px;
+  height: 200px;
+}
+
+.main {
+  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  gap: 130px;
+}
+
+.main__div {
+  width: 770px;
+  height: 3600px;
+}
+
+.sidebar__h3 {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.sidebar__h4 {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+  margin-bottom: 15px;
+  color: rgb(153, 153, 153);
+}
+
+
+.sidebar__h5 {
+  margin: 0;
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  color: rgb(102, 102, 102);
+}
+
+.sidebar__button {
+  margin-top: 20px;
+  color: white;
+  width: 270px;
+  height: 50px;
+  border: none;
+  text-decoration: none; 
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  border-radius: 5px;
+  background: rgb(35, 35, 35);
+}
+
+.sidebar__div-2 {
+  margin-top: 60px;
+  width: 270px;
+  height: 1020px;
+}
+
+.sidebar-div-h3 {
+  margin:0;
+  width: 105px;
+  height: 23px;
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  margin-bottom: 23px;
+}
+
+.sidebar-div-h4 {
+  width: 159px;
+  height: 18px;
+  font-family: "PT Sans";
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgb(102, 102, 102);
+  margin: 0;
+  margin-bottom: 30px;
+  
+}
+
+.sidebar-div-h5 {
+  width: 270px;
+  height: 56px;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+
+.sidebar__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.sidebar__div-3 {
+  width: 270px;
+  height: 516px;
+  margin-top: 60px;
+}
+
+.sidebar__div-3-h3 {
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  width: 78px;
+  height: 21px;
+  margin-bottom: 25px;
+}
+.sidebar__div-3 img{
+  height: 130px;
+  width: 130px;
+  gap: 115px;
+}
+
+.sidebar__button2 {
+  margin-top: 10px;
+    color: white;
+    width: 270px;
+    height: 50px;
+    border: none;
+    text-decoration: none; 
+    font-family: "PT Sans";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    border-radius: 5px;
+    background: rgb(35, 35, 35);
+    margin-bottom: 60px;
+}
+
+.sidebar__div-4 {
+  margin-top: 60px;
+  width: 270px;
+  height: 277px;
+}
+
+.sidebar__div-4-h4 {
+  width: 35px;
+  height: 21px;
+  color: rgb(23, 23, 23);
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-bottom: 26px;
+}
+
+.sidebar-side-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.sidebar__p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 82px;
+  height: 30px;
+  border-radius: 3px;
+  background: rgb(235, 235, 235);
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.sidebar__div-4 {
+  margin-bottom: 60px;
+  
+}
+
+.section__div-5 {
+  width: 270px;
+  height: 280px;
+}
+
+.sidebar-div-h6 {
+  width: 130px;
+  height: 23px;
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.sidebar-div-h7 {
+  color: rgb(102, 102, 102);
+  margin: 0;
+  width: 252px;
+  height: 48px;
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 25px;
+}
+
+
+.sidebar__button5 {
+    margin: 0;
+    color: white;
+    width: 270px;
+    height: 50px;
+    border: none;
+    text-decoration: none; 
+    font-family: "PT Sans";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    border-radius: 5px;
+    background: rgb(35, 35, 35);
+}
+
+.input__name {
+  width: 270px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 3px;
+  background: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  display: flex;
+}
+
+
+.input__email {
+  width: 270px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 3px;
+  background: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+input[type="text"]::placeholder {
+  width: 67px;
+  height: 18px;
+  color: gray; 
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;  
+  padding: 15px;
+}
+
+input[type="email"]::placeholder {
+  width: 110px;
+  height: 18px;
+  color: gray; 
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;  
+  padding: 15px;
+}
+
+body {
+  background: rgb(242, 242, 242);
+}
+
+
+.footer {
+  width: 100vw;
+  height: 500px;
+  background: rgb(23, 23, 23);
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.footer__h4 {
+  margin: 0;
+  color: white;
+  font-family: "PT Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  width: 100px;
+  height: 23px;
+  margin-top: 65px;
+}
+
+.footer__p {
+  margin: 0;
+  margin-top: 30px;
+  color: white;
+  width: 270px;
+  height: 66px;
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+
+
+.footer__foot {
+  width: 230px;
+  height: 83px;
+}
+
+.footer__h5 {
+  margin: 0;
+  margin-top: 60px;
+  color: white;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  width: 117px;
+  height: 26px;
+}
+
+.footer__logo {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+.footer__div-2 {
+  width: 293px;
+  height: 389px;
+}
+
+.footer__h6 {
+  margin: 0;
+  color: white;
+  width: 108px;
+  height: 26px;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  margin-top: 65px;
+  margin-bottom: 29px;
+}
+
+
+.footer__div-middle-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 293px;
+  height: 95px;
+  margin-bottom: 25px;
+}
+
+.footer__mooter {
+  margin-left: 20px;
+}
+
+.footer__h44 {
+  font-family: "PT Sans";
+  margin: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  width: 178px;
+  height: 49px;
+}
+
+.footer__pp {
+  width: 159px;
+  height: 14px;
+  margin: 0;
+  color: white;
+  font-family: "PT Sans";
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+
+.footer__div-middle-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 293px;
+  height: 95px;
+  margin-bottom: 25px;
+}
+
+.footer__div-middle-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 293px;
+  height: 95px;
+  margin-bottom: 25px;
+}
+
+
+.footer__div-3-h4 {
+  margin-top: 65px;
+  color: white;
+  width: 93px;
+  height: 26px;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+
+.input__name2 {
+  margin-top: 40px;
+  border-radius: 3px;
+  background: rgb(55, 55, 55);
+  width: 270px;
+  height: 50px;
+  border: none;
+  text-decoration: none;
+  display: flex;
+}
+
+.input__email2 {
+  margin-top: 10px;
+  border-radius: 3px;
+  background: rgb(55, 55, 55);
+  width: 270px;
+  height: 50px;
+  border: none;
+  text-decoration: none;
+  display: flex;
+}
+
+.sidebar__button4 {
+  margin-top: 10px;
+  color: white;
+  width: 274px;
+  height: 50px;
+  border: none;
+  text-decoration: none; 
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  border-radius: 5px;
+  background: rgb(35, 35, 35);
+}
+
+.div2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 94px;
+  background: rgb(0, 0, 0);
+}
+
+.div__h4 {
+  margin:0;
+  color:white;
+  width: 218px;
+  height: 18px;
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.div2__div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 353px;
+  height: 18px;
+  color: white;
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1440px) { /* Пример, измените на нужный размер */
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+  }
+}
+
+@media (max-width: 1200px) { /* Пример, измените на нужный размер */
+  .sidebar {
+    display: none; /* Скрываем боковую панель */
+  }
+  .section__8 {
+    display: none;
+  }
+  .section__8-h2 {
+    display: none;
+  }
+  .main__div {
+    width: 770px;
+    height: 3200px;
+  }
+  .footer__div-1 {
+    display: none;
+  }
+  .section__div-head {
+    display: none;
+  }
+}
+
+@media (max-width: 930px) { 
+  .header {
+    gap: 130px;
+  }
+}
+
+@media (max-width: 760px) { 
+  .header {
+    gap: 100px;
+  }
+  .section__div {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 столбца одинаковой ширины */
+    grid-template-rows: repeat(2, 265px); /* 2 строки высотой 100px */
+    gap: 10px;
+  }
+  .footer__div-2 {
+    margin-left: 100px;
+  }
+}
+@media (max-width: 680px) { 
+  .header {
+    gap: 60px;
+  }
+  .section__div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 столбца одинаковой ширины */
+    grid-template-rows: repeat(2, 265px); /* 2 строки высотой 100px */
+  }
+  .footer__div-2 {
+    margin-left: 100px;
+  }
+  .footer__div-2 {
+    display: none;
+  }
+}
